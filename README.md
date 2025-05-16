@@ -16,6 +16,16 @@ HandcraftedHaven is a platform for artisans to publish, showcase, and sell their
 - GitHub + GitHub Projects
 - Vercel
 
+## Color Palette
+- Primary: #5C4033 (wood)
+- Secondary: #D9B382 (light beige)
+- Accent: #A0522D (terracotta)
+- Background: #F5F5F5 (off-white)
+
+## Typography
+- Titles: Playfair Display (Google Fonts)
+- Text: Open Sans
+
 ## Team Members
 - Alejandro Villamar
 
