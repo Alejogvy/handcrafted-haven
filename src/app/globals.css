@@ -1,26 +1,26 @@
-@import "tailwindcss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 245 245 245;
+  --primary: 92 64 51;
+  --secondary: 217 179 130;
+  --accent: 160 82 45;
+  --font-text: 'Open Sans', sans-serif;
+  --font-title: 'Playfair Display', serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.dark {
+  --background: 23 23 23;
+  --primary: 245 245 245;
+  --secondary: 217 179 130;
+  --accent: 160 82 45;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply font-text bg-background text-primary;
+  font-family: var(--font-text);
 }

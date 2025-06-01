@@ -1,20 +1,17 @@
-import "./globals.css";
-import type { Metadata } from "next";
+import './globals.css'
+import { ThemeProvider } from '@/context/ThemeContext'
+import ThemeWrapper from '@/components/ThemeWrapper'
 
-export const metadata: Metadata = {
-  title: "Handcrafted Haven",
-  description: "Discover and support local artisans",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head />
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider>
+          <ThemeWrapper>
+            {children}
+          </ThemeWrapper>
+        </ThemeProvider>
+      </body>
     </html>
-  );
+  )
 }

@@ -1,9 +1,23 @@
+'use client'
+
+import { useTheme } from '@/context/ThemeContext'
+
 export default function Navbar() {
-    return (
-      <nav>
-        {/* Navigation links */}
-        <h1>Handcrafted Haven</h1>
-      </nav>
-    );
-  }
-  
+  const { darkMode, toggleTheme } = useTheme()
+
+  return (
+    <nav className="bg-white dark:bg-gray-800">
+      {/* Tu contenido del Navbar */}
+      <button 
+        onClick={toggleTheme}
+        className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+      >
+        {darkMode ? (
+          <span>🌙 Modo Oscuro</span>
+        ) : (
+          <span>☀️ Modo Claro</span>
+        )}
+      </button>
+    </nav>
+  )
+}
