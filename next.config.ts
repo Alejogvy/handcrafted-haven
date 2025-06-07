@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   experimental: {
-    optimizeCss: false, // Desactiva la optimización CSS
-  },
+    // Correct configuration for Server Actions
+    serverActions: {}, // Empty object or object with specific settings
+    optimizeCss: false
+  }
 }
-
-module.exports = nextConfig

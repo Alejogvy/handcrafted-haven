@@ -1,26 +1,33 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
-
-:root {
-  --background: 245 245 245;
-  --primary: 92 64 51;
-  --secondary: 217 179 130;
-  --accent: 160 82 45;
-  --font-text: 'Open Sans', sans-serif;
-  --font-title: 'Playfair Display', serif;
+@layer base {
+  :root {
+    --background: 245 245 245;
+    --primary: 92 64 51;
+    --secondary: 217 179 130;
+    --accent: 160 82 45;
+  }
+  
+  html.dark {
+    --background: 23 23 23;
+    --primary: 245 245 245;
+    --secondary: 217 179 130;
+    --accent: 160 82 45;
+  }
 }
 
-html.dark {
-  --background: 23 23 23;
-  --primary: 245 245 245;
-  --secondary: 217 179 130;
-  --accent: 160 82 45;
+@layer utilities {
+  .bg-background {
+    background-color: rgb(var(--background));
+  }
+  .text-primary {
+    color: rgb(var(--primary));
+  }
 }
 
 body {
-  @apply font-text bg-background text-primary;
-  font-family: var(--font-text);
+  @apply bg-background text-primary;
+  font-family: 'Open Sans', sans-serif;
 }

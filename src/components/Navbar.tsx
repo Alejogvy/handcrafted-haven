@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white dark:bg-gray-800">
-      {/* Tu contenido del Navbar */}
+      {/* Your Navbar content */}
       <button 
         onClick={toggleTheme}
         className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
