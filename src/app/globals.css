@@ -9,7 +9,7 @@
     --secondary: 217 179 130;
     --accent: 160 82 45;
   }
-  
+
   html.dark {
     --background: 23 23 23;
     --primary: 245 245 245;
@@ -25,9 +25,12 @@
   .text-primary {
     color: rgb(var(--primary));
   }
+  .bg-accent {
+    background-color: rgb(var(--accent));
+  }
 }
 
 body {
-  @apply bg-background text-primary;
+  @apply bg-background text-primary transition-colors duration-300;
   font-family: 'Open Sans', sans-serif;
 }
