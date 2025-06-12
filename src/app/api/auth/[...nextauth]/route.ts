@@ -1,4 +1,3 @@
-// src/app/api/auth/[...nextauth]/route.ts
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
@@ -12,8 +11,8 @@ const handler = NextAuth({
       },
       async authorize(credentials) {
         const { email, password } = credentials ?? {}
-        if (email === 'vendedor@ejemplo.com' && password === 'artesano123') {
-          return { id: '1', name: 'Artesano Ejemplo', email }
+        if (email === 'seller@example.com' && password === 'artisan123') {
+          return { id: '1', name: 'Craftsman Example', email }
         }
         return null
       },

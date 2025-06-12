@@ -1,22 +1,15 @@
+import { fontFamily } from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}"
-  ],
-  darkMode: 'class',
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      colors: {
-        background: 'rgb(var(--background))',
-        primary: 'rgb(var(--primary))',
-        secondary: 'rgb(var(--secondary))',
-        accent: 'rgb(var(--accent))'
-      },
       fontFamily: {
-        sans: ['Open Sans', 'sans-serif'],
-        serif: ['Playfair Display', 'serif']
-      }
-    }
-  }
+        title: ['"Playfair Display"', ...fontFamily.serif],
+        body: ['"Open Sans"', ...fontFamily.sans],
+      },
+    },
+  },
+  plugins: [],
 }

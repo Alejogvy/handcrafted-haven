@@ -3,35 +3,60 @@
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { useSession, signOut } from 'next-auth/react'
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const { data: session } = useSession()
 
   useEffect(() => setMounted(true), [])
 
   return (
-    <header className="bg-background border-b border-gray-300 dark:border-gray-700 py-4 shadow-sm">
+    <header className="bg-background border-b border-primary/30 dark:border-primary/50 py-4 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-title font-bold hover:opacity-80">
+        <Link
+          href="/"
+          className="text-2xl font-title font-bold text-accent hover:opacity-80 transition-colors-theme"
+        >
           Handcrafted Haven
         </Link>
-        <nav className="flex items-center gap-4">
-          <Link href="/products" className="hover:underline">
-            Productos
+        <nav className="flex items-center gap-4 font-body text-sm">
+          <Link href="/products" className="hover:text-accent transition-colors-theme">
+            Products
           </Link>
-          <Link href="/about" className="hover:underline">
-            Acerca de
+          <Link href="/about" className="hover:text-accent transition-colors-theme">
+            About
           </Link>
-          <Link href="/contact" className="hover:underline">
-            Contacto
+          <Link href="/contact" className="hover:text-accent transition-colors-theme">
+            Contact
           </Link>
+
+          {session ? (
+            <>
+              <Link href="/profile" className="hover:text-accent transition-colors-theme">
+                My Profile
+              </Link>
+              <button
+                onClick={() => signOut()}
+                className="ml-4 px-3 py-1 border border-primary rounded hover:bg-accent/10 transition-colors-theme"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <Link href="/login" className="hover:text-accent transition-colors-theme">
+              Login
+            </Link>
+          )}
+
           {mounted && (
             <button
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-              className="ml-4 px-3 py-1 border rounded text-sm hover:bg-accent/10 transition"
+              aria-label="Toggle theme"
+              className="ml-4 px-3 py-1 border border-primary rounded hover:bg-accent/10 transition-colors-theme"
             >
-              {theme === 'light' ? '🌙 Oscuro' : '☀️ Claro'}
+              {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
             </button>
           )}
         </nav>

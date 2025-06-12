@@ -16,26 +16,44 @@ export default function ProductDetailPage({ params }: Props) {
 
   return (
     <main className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
+      <h1 className="text-3xl font-title font-bold mb-4">{product.title}</h1>
+      
+      <img
+        src={product.image}
+        alt={product.title}
+        className="w-full h-auto rounded mb-4 shadow"
+      />
+      
+      <p className="text-lg font-body mb-2">{product.description}</p>
+      
+      <p className="text-xl font-semibold text-green-700 dark:text-green-400 mb-4">
+        ${product.price.toFixed(2)}
+      </p>
 
-      <div className="relative w-full h-80 mb-4">
-        <Image
-          src={product.image}
-          alt={product.title}
-          layout="fill"
-          objectFit="cover"
-          className="rounded"
-        />
-      </div>
+      {/* Link to the reviews page */}
+      <Link
+        href={`/products/${product.id}/reviews`}
+        className="inline-block mb-6 text-accent hover:underline font-semibold"
+      >
+        ⭐ Read and add reviews
+      </Link>
 
-      <p className="text-lg mb-2">{product.description}</p>
-      <p className="text-xl font-semibold text-green-700 mb-6">${product.price}</p>
+      {product.features?.length ? (
+        <>
+          <h2 className="text-2xl font-semibold mb-2">Features</h2>
+          <ul className="list-disc list-inside mb-4">
+            {product.features.map((feature, idx) => (
+              <li key={idx}>{feature}</li>
+            ))}
+          </ul>
+        </>
+      ) : null}
 
       <Link
         href="/products"
-        className="text-blue-600 hover:underline text-sm"
+        className="inline-block mt-6 text-accent hover:underline font-semibold"
       >
-        ← Volver al catálogo
+        ← Back to all products
       </Link>
     </main>
   )

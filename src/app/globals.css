@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 245 245 245;
-    --primary: 92 64 51;
-    --secondary: 217 179 130;
-    --accent: 160 82 45;
+    --background: 245 245 245; /* off-white */
+    --primary: 92 64 51;       /* wood */
+    --secondary: 217 179 130;  /* light beige */
+    --accent: 160 82 45;       /* terracotta */
   }
 
   html.dark {
@@ -16,21 +18,88 @@
     --secondary: 217 179 130;
     --accent: 160 82 45;
   }
+
+  .font-body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  .font-title {
+    font-family: 'Playfair Display', serif;
+  }
 }
 
 @layer utilities {
+  /* Backgrounds */
   .bg-background {
     background-color: rgb(var(--background));
   }
-  .text-primary {
-    color: rgb(var(--primary));
+  .bg-primary {
+    background-color: rgb(var(--primary));
+  }
+  .bg-secondary {
+    background-color: rgb(var(--secondary));
   }
   .bg-accent {
     background-color: rgb(var(--accent));
   }
+
+  /* Text colors */
+  .text-primary {
+    color: rgb(var(--primary));
+  }
+  .text-secondary {
+    color: rgb(var(--secondary));
+  }
+  .text-accent {
+    color: rgb(var(--accent));
+  }
+
+  /* Borders */
+  .border-primary {
+    border-color: rgb(var(--primary));
+  }
+  .border-secondary {
+    border-color: rgb(var(--secondary));
+  }
+  .border-accent {
+    border-color: rgb(var(--accent));
+  }
+
+  /* Hover states */
+  .hover\:bg-primary:hover {
+    background-color: rgb(var(--primary));
+  }
+  .hover\:bg-secondary:hover {
+    background-color: rgb(var(--secondary));
+  }
+  .hover\:bg-accent:hover {
+    background-color: rgb(var(--accent));
+  }
+
+  .hover\:text-primary:hover {
+    color: rgb(var(--primary));
+  }
+  .hover\:text-secondary:hover {
+    color: rgb(var(--secondary));
+  }
+  .hover\:text-accent:hover {
+    color: rgb(var(--accent));
+  }
+
+  /* Shadows */
+  .shadow-accent {
+    box-shadow: 0 4px 6px -1px rgba(var(--accent), 0.2), 0 2px 4px -2px rgba(var(--accent), 0.1);
+  }
+
+  /* Transitions */
+  .transition-colors-theme {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
 }
 
 body {
-  @apply bg-background text-primary transition-colors duration-300;
-  font-family: 'Open Sans', sans-serif;
+  @apply bg-background text-primary font-body;
+}
+
+h1, h2, h3, h4 {
+  @apply font-title;
 }

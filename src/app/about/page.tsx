@@ -1,13 +1,17 @@
-import React from 'react'
-
 export default function AboutPage() {
   return (
-    <main className="py-12 px-4 max-w-screen-md mx-auto text-center">
-      <h1 className="text-4xl font-title mb-6">About Handcrafted Haven</h1>
-      <p className="text-lg text-gray-700 dark:text-gray-300">
-        Handcrafted Haven is a community-driven platform dedicated to connecting talented artisans
-        with appreciative customers. We believe in celebrating craftsmanship, sustainability, and
-        creativity. Every product listed on our platform tells a story of passion and artistry.
+    <main className="max-w-3xl mx-auto px-6 py-12">
+      <h1 className="text-4xl font-title font-bold mb-6 text-accent">About Us</h1>
+      <p className="text-lg mb-4">
+        <strong>Handcrafted Haven</strong> is a curated marketplace for artisanal, handmade home decor products. 
+        Our mission is to connect skilled creators with design lovers looking for unique and meaningful pieces.
+      </p>
+      <p className="text-lg mb-4">
+        Every product is crafted with care, passion, and sustainability in mind. From ceramic bowls to wooden sculptures,
+        each item tells a story of craftsmanship and tradition.
+      </p>
+      <p className="text-lg">
+        Thank you for supporting handmade goods and the artisans who bring them to life!
       </p>
     </main>
   )
