@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 245 245 245;
+    --primary: 92 64 51;
+    --secondary: 217 179 130;
+    --accent: 160 82 45;
+  }
+
+  .dark {
+    --background: 23 23 23;
+    --primary: 245 245 245;
+    --secondary: 217 179 130;
+    --accent: 160 82 45;
+  }
+}
+
+  .font-body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  .font-title {
+    font-family: 'Playfair Display', serif;
+  }
+
+@layer utilities {
+  .text-muted-foreground {
+    color: rgb(var(--muted));
+  }
+  .dark .text-muted-foreground {
+    color: rgb(var(--muted));
+  }
+  /* Color Utilities */
+  /* Backgrounds */
+  .bg-background {
+    background-color: rgb(var(--background));
+  }
+  .bg-primary {
+    background-color: rgb(var(--primary));
+  }
+  .bg-secondary {
+    background-color: rgb(var(--secondary));
+  }
+  .bg-accent {
+    background-color: rgb(var(--accent));
+  }
+  .bg-muted {
+    background-color: rgb(var(--muted));
+  }
+
+  /* Text colors */
+  .text-primary {
+    color: rgb(var(--primary));
+  }
+  .text-secondary {
+    color: rgb(var(--secondary));
+  }
+  .text-accent {
+    color: rgb(var(--accent));
+  }
+  .text-muted {
+    color: rgb(var(--muted));
+  }
+
+  /* Text opacity */
+  .text-primary\/80 {
+    color: rgba(var(--primary), 0.8);
+  }
+  .text-secondary\/80 {
+    color: rgba(var(--secondary), 0.8);
+  }
+  .text-accent\/90 {
+    color: rgba(var(--accent), 0.9);
+  }
+  .dark\:text-secondary\/80 {
+    color: rgba(var(--secondary), 0.8);
+  }
+
+  /* Borders */
+  .border-primary {
+    border-color: rgb(var(--primary));
+  }
+  .border-secondary {
+    border-color: rgb(var(--secondary));
+  }
+  .border-accent {
+    border-color: rgb(var(--accent));
+  }
+  .border-muted {
+    border-color: rgb(var(--muted));
+  }
+
+  /* Background opacity */
+  .bg-primary\/10 {
+    background-color: rgba(var(--primary), 0.1);
+  }
+  .bg-secondary\/10 {
+    background-color: rgba(var(--secondary), 0.1);
+  }
+  .bg-accent\/10 {
+    background-color: rgba(var(--accent), 0.1);
+  }
+  .bg-accent\/90 {
+    background-color: rgba(var(--accent), 0.9);
+  }
+
+  /* Hover states */
+  .hover\:bg-primary:hover {
+    background-color: rgb(var(--primary));
+  }
+  .hover\:bg-secondary:hover {
+    background-color: rgb(var(--secondary));
+  }
+  .hover\:bg-accent:hover {
+    background-color: rgb(var(--accent));
+  }
+  .hover\:bg-accent\/90:hover {
+    background-color: rgba(var(--accent), 0.9);
+  }
+
+  .hover\:text-primary:hover {
+    color: rgb(var(--primary));
+  }
+  .hover\:text-secondary:hover {
+    color: rgb(var(--secondary));
+  }
+  .hover\:text-accent:hover {
+    color: rgb(var(--accent));
+  }
+
+  /* Shadows */
+  .shadow-accent {
+    box-shadow: 0 4px 6px -1px rgba(var(--accent), 0.2), 0 2px 4px -2px rgba(var(--accent), 0.1);
+  }
+  .hover\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Transitions */
+  .transition-colors-theme {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .transition-all-theme {
+    transition: all 0.3s ease;
+  }
+  .transition-transform-theme {
+    transition: transform 0.5s ease;
+  }
+
+  /* Text truncation */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Layout */
+  .max-w-7xl {
+    max-width: 80rem;
+  }
+}
+
+@layer components {
+  /* Custom components can be added here if needed */
+}
+
+body {
+  @apply bg-background text-primary font-body antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-title;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
