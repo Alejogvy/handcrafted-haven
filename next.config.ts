@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', // Recomendado para Vercel
+  output: 'standalone',
   images: {
-    domains: [], // Vacío porque no usas imágenes externas
+    domains: [],
   },
 }
 
